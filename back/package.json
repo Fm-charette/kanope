@@ -1,0 +1,58 @@
+{
+  "name": "back",
+  "description": "",
+  "version": "0.0.0",
+  "homepage": "",
+  "private": true,
+  "main": "src",
+  "keywords": [
+    "feathers"
+  ],
+  "author": {
+    "name": "flo@MacBook-Pro-De-FLoryan",
+    "email": "floryan.mollet@epitech.eu"
+  },
+  "contributors": [],
+  "bugs": {},
+  "directories": {
+    "lib": "src",
+    "test": "test/",
+    "config": "config/"
+  },
+  "engines": {
+    "node": "^14.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "scripts": {
+    "test": "npm run lint && npm run jest",
+    "lint": "standard",
+    "dev": "nodemon src/",
+    "start": "nodemon index.js",
+    "jest": "jest --forceExit"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ],
+    "ignore": []
+  },
+  "dependencies": {
+    "@feathersjs/authentication": "^4.5.14",
+    "@feathersjs/authentication-local": "^4.5.14",
+    "@feathersjs/authentication-oauth": "^4.5.14",
+    "@feathersjs/configuration": "^4.5.12",
+    "@feathersjs/errors": "^4.5.12",
+    "@feathersjs/express": "^4.5.14",
+    "@feathersjs/feathers": "^4.5.12",
+    "@feathersjs/transport-commons": "^4.5.14",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "feathers-mongoose": "^8.5.1",
+    "helmet": "^4.6.0",
+    "mongodb-core": "^3.2.7",
+    "mongoose": "^6.3.2",
+    "nodemon": "^2.0.16",
+    "serve-favicon": "^2.5.0",
+    "winston": "^3.7.2"
+  }
+}

@@ -20,12 +20,19 @@ module.exports = function (app) {
         rssi = result.devices[i].rssi;
         console.log("Signal :", rssi);
         console.log("-----");
+        mac = i;
+        console.log("Mac", i);
+        console.log("-----");
         data = result.devices[i].data
         console.log("data", data);
         console.log("-----");
-        const parsedDataArray = data.slice(data.length - 16, data.length).match(/.{1,4}/g);
+        const parsedDataArray = data.slice(data.length - 16, data.length).match(/.{1,2}/g).reverse().join('').match(/.{1,4}/g).reverse();
         console.log("Result :", parsedDataArray);
-        //console.log("Prop ", i);
+        parsedDataArray.forEach(element => {
+          const hexaTodeci = (parseInt(element, 16)/100).toFixed(2);
+          console.log("Res ", hexaTodeci);
+        });
+        const numb1 = (parseInt(parsedDataArray, 16)/100).toFixed(2);
       }
     }
   })

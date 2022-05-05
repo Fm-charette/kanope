@@ -8,7 +8,10 @@ const getUrl = pathname => url.format({
   protocol: 'http',
   port,
   pathname
+  
 });
+
+
 
 describe('Feathers application tests (with jest)', () => {
   let server;

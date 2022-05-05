@@ -54,5 +54,8 @@
     "nodemon": "^2.0.16",
     "serve-favicon": "^2.5.0",
     "winston": "^3.7.2"
+  },
+  "devDependencies": {
+    "jest": "^28.0.3"
   }
 }

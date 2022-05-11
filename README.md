@@ -4,7 +4,7 @@ Exercice de developpement full stack pour kanope
 
 ## Installation
 
-cloner le repo, aller dans la branche develop.
+cloner le repo.
 
 ## front 
 ```bash

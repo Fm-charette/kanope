@@ -17,30 +17,25 @@
 
       <q-tab-panels v-model="tab" animated>
         <q-tab-panel name="login">
-          <cnx-form/>
+          <loginForm/>
         </q-tab-panel>
 
         <q-tab-panel name="register">
-          <cnx-formRegister/>
+          <registerForm/>
         </q-tab-panel>
       </q-tab-panels>
     </q-card>
   </q-page>
 </template>
 
-<script>
-export default {
-  name: 'myLogin',
-  data () {
-    return {
-      tab: 'login'
-    }
-  },
-  components: {
-    'cnx-form': require('components/Login/loginForm').default,
-    'cnx-formRegister': require('components/Login/registerForm').default
-  }
-}
+<script setup>
+
+import loginForm from '../components/Login/loginForm';
+import registerForm from '../components/Login/registerForm';
+import {ref} from 'vue';
+
+const tab = ref('login');
+
 </script>
 
 <style scoped>

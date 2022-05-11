@@ -10,20 +10,20 @@ module.exports = function (app) {
   };
   // Initialize our service with any options it requires
   app.use('/data', new Data(options, app));
+
   app.post('/callback',(req, res) =>  {
     let result = req.body;
+    let hardwareId = '';
     let macAdress = '';
     let signalRssi = '';
-    let hardwareId = result.imei;
-    console.log("Hardware :", hardwareId);
+    hardwareId = result.imei;
+    let sensorData = '';
     let hexaTodeci = [];
     for (let i in result.devices) {
       if (result.devices.hasOwnProperty(i)){
          macAdress = i;
-        console.log("Mac", macAdress);
         signalRssi = result.devices[i].rssi;
-       console.log("Signal ", signalRssi);
-       let sensorData = result.devices[i].data
+        sensorData = result.devices[i].data
         const parsedDataArray = sensorData.slice(sensorData.length - 16, sensorData.length).match(/.{1,2}/g).reverse().join('').match(/.{1,4}/g).reverse();
         parsedDataArray.forEach((element ,index) => {
           if (index != 3){
@@ -32,7 +32,6 @@ module.exports = function (app) {
             hexaTodeci.push((parseInt(element, 16)));
           }
         });
-        console.log("Data", hexaTodeci);
         const sensor = new Data(options);
         sensor.imei = hardwareId;
         sensor.adresse = macAdress;
